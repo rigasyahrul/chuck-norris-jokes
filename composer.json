@@ -1,0 +1,25 @@
+{
+    "name": "rigasyahrul/chuck-norris-jokes",
+    "description": "Jokes of Chuck Norris",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rigasyahrul",
+            "email": "riga@nusantarabetastudio.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rigasyahrul\\ChuckNorrisJokes\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Rigasyahrul\\ChuckNorrisJokes\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
