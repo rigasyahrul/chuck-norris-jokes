@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Rigasyahrul\ChuckNorrisJokes\Tests;
 
 use PHPUnit\Framework\TestCase;
@@ -26,7 +25,7 @@ class JokesFactoryTest extends TestCase
             'Chuck Norris doesn’t read books. He stares them down until he gets the information he wants.',
             'Chuck Norris breathes air … five times a day.',
             'Time waits for no man. Unless that man is Chuck Norris.',
-            'Chuck Norris drinks napalm to fight his heartburn.'
+            'Chuck Norris drinks napalm to fight his heartburn.',
         ];
 
         $jokes = new JokesFactory();
