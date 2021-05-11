@@ -9,7 +9,6 @@ class JokesFactory
         'Chuck Norris breathes air … five times a day.',
         'Time waits for no man. Unless that man is Chuck Norris.',
         'Chuck Norris drinks napalm to fight his heartburn.',
-        '',
     ];
 
     public function __construct(array $jokes = null)
