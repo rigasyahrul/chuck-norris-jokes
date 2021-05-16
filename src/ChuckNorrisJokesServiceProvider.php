@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Rigasyahrul\ChuckNorrisJokes;
 
 use Illuminate\Support\ServiceProvider;
@@ -9,7 +8,6 @@ class ChuckNorrisJokesServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-
     }
 
     public function register()
