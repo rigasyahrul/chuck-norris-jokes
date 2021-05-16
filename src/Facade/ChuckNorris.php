@@ -5,8 +5,7 @@ namespace Rigasyahrul\ChuckNorrisJokes\Facade;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class ChuckNorris
- * @package Rigasyahrul\ChuckNorrisJokes\Facade
+ * Class ChuckNorris.
  *
  * @see \Rigasyahrul\ChuckNorrisJokes\JokesFactory
  */
