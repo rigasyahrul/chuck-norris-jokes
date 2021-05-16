@@ -2,6 +2,10 @@
 
 namespace Rigasyahrul\ChuckNorrisJokes\Tests;
 
+use GuzzleHttp\Client;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Rigasyahrul\ChuckNorrisJokes\JokesFactory;
 
@@ -10,27 +14,18 @@ class JokesFactoryTest extends TestCase
     /** @test */
     public function it_returns_a_random_joke()
     {
-        $jokes = new JokesFactory([
-            'This is a joke',
+        // Create a mock and queue two responses.
+        $mock = new MockHandler([
+            new Response(200, [], '{ "type": "success", "value": { "id": 72, "joke": "How much wood would a woodchuck chuck if a woodchuck could Chuck Norris? All of it.", "categories": [] } }'),
         ]);
+
+        $handlerStack = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handlerStack]);
+
+        $jokes = new JokesFactory($client);
+
         $joke = $jokes->getRandomJoke();
 
-        $this->assertSame('This is a joke', $joke);
-    }
-
-    /** @test */
-    public function it_returns_a_predefined_joke()
-    {
-        $chuckNorrisJokes = [
-            'Chuck Norris doesn’t read books. He stares them down until he gets the information he wants.',
-            'Chuck Norris breathes air … five times a day.',
-            'Time waits for no man. Unless that man is Chuck Norris.',
-            'Chuck Norris drinks napalm to fight his heartburn.',
-        ];
-
-        $jokes = new JokesFactory();
-        $joke = $jokes->getRandomJoke();
-
-        $this->assertContains($joke, $chuckNorrisJokes);
+        $this->assertSame('How much wood would a woodchuck chuck if a woodchuck could Chuck Norris? All of it.', $joke);
     }
 }
