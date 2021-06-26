@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Rigasyahrul\ChuckNorrisJokes\Http\Controllers;
-
 
 use Rigasyahrul\ChuckNorrisJokes\Facade\ChuckNorris;
 
@@ -16,7 +14,7 @@ class ChuckNorrisController
 
         //return ChuckNorris::getRandomJoke();
         return view('chuck-norris::index', [
-            'joke' => ChuckNorris::getRandomJoke()
+            'joke' => ChuckNorris::getRandomJoke(),
         ]);
     }
 }

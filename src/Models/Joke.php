@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Rigasyahrul\ChuckNorrisJokes\Models;
-
 
 use Illuminate\Database\Eloquent\Model;
 
