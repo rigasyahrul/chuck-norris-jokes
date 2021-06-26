@@ -1,8 +1,6 @@
 <?php
 
-
 namespace Rigasyahrul\ChuckNorrisJokes\Tests;
-
 
 use Illuminate\Support\Facades\Artisan;
 use Orchestra\Testbench\TestCase;
@@ -23,7 +21,7 @@ class LaravelTest extends TestCase
     protected function getPackageAliases($app)
     {
         return [
-            'ChuckNorris' => ChuckNorrisJoke::class
+            'ChuckNorris' => ChuckNorrisJoke::class,
         ];
     }
 
@@ -31,7 +29,7 @@ class LaravelTest extends TestCase
     {
         include_once __DIR__.'/../database/migrations/create_jokes_table.php.stub';
 
-        (new \CreateJokesTable)->up();
+        (new \CreateJokesTable())->up();
     }
 
     /**
@@ -49,7 +47,7 @@ class LaravelTest extends TestCase
 
         $output = Artisan::output();
 
-        $this->assertSame('a joke' . PHP_EOL, $output);
+        $this->assertSame('a joke'.PHP_EOL, $output);
     }
 
     /**
